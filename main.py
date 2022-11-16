@@ -3,14 +3,12 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from webdriver_manager.chrome import ChromeDriverManager
 
-
-PATH = "C:\Program Files (x86)\chromedriver.exe"
-driver = webdriver.Chrome(PATH)
+driver = webdriver.Chrome(ChromeDriverManager().install())
 driver.implicitly_wait(10)
 
 driver.get("https://shopee.com.my/product/168114093/6184726748")
-
 
 print(driver.title)
 
